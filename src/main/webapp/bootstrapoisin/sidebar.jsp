@@ -7,39 +7,39 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
       <ul class="nav sidebar-nav">
           <li class="sidebar-brand">
-              <a href="#">
+              <a href="index.jsp">
                  Spiracle
               </a>
           </li>
           <li>
-              <a href="#">Overview</a>
+              <a href="index.jsp">Overview</a>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">CSRF <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li class="dropdown-header">Dropdown heading</li>
-              <li><a href="#">QA Tests</a></li>
-              <li><a href="#">Demo</a></li>
+              <li class="dropdown-header"></li>
+              <li><a href="csrf.jsp">QA Tests</a></li>
+              <li><a href="csrfdemo.jsp">Demo</a></li>
             </ul>
           </li>
           <li>
-              <a href="#">File</a>
+              <a href="file.jsp">File</a>
           </li>
           <li>
-              <a href="#">Network</a>
+              <a href="network.jsp">Network</a>
           </li>
 
           <li>
-              <a href="#">SQL</a>
+              <a href="sql.jsp">SQL</a>
           </li>
           <li>
-              <a href="#">XSS</a>
+              <a href="xss.jsp">XSS</a>
           </li>
           <li>
-              <a href="#">Path Traversal</a>
+              <a href="pathTraversal.jsp">Path Traversal</a>
           </li>
           <li>
-              <a href="#">Misc</a>
+              <a href="misc.jsp">Misc</a>
           </li>
       </ul>
 

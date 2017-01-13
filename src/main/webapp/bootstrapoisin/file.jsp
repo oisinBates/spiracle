@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>File</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,12 +37,6 @@
             </button>
 
             <div class="row">
-                  <%-- <div class="row">
-                    <div class="jumbotron">
-                      <h1>File</h1>
-                      <p>Blurb about these tests</p>
-                    </div>
-                  </div> --%>
               <div class="container">
                   <div class="page-header">
                     <h1>File</h1>
@@ -54,40 +48,76 @@
 
             <div class="row">
               <div class="container">
-                <div class="col-md-6">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel Heading</div>
-                    <div class="panel-body">Panel Content</div>
+                <div class="col-md-3">
+                  <div class="panel panel-info">
+                    <%
+              				String textData = (String) session.getAttribute("fileContents");
+              				if (textData == null) {
+              					textData = "";
+              				}
+              			%>
+                    <div class="panel-heading">File</div>
+                    <div class="panel-body">
+                      <form id="fileForm" action="FileServlet" method="post">
+              					<label>Path: <label> <input type="text" name="filePath"><br>
+                        <label>Read <input type="radio" name="fileArg" value="read" checked></label>
+              					<label>Write <input type="radio" name="fileArg" value="write"></label>
+              					<label>Delete <input type="radio" name="fileArg" value="delete"></label>
+              					<input type="submit" value=Submit class="btn btn-info">
+              				</form>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel Heading</div>
-                    <div class="panel-body">Panel Content</div>
+                <div class="col-md-9">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">Text Data</div>
+                    <div class="panel-body">
+                      <pre class="pre">
+              					<textarea form="fileForm" name="fileText"
+              						style="  width: 60em; height: 20em;"><%=textData%></textarea>
+              				</pre>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-
             <div class="row">
               <div class="container">
                 <div class="col-md-4">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel Header</div>
-                    <div class="panel-body">Panel Content</div>
+                  <div class="panel panel-info">
+                    <div class="panel-heading">File URL</div>
+                    <div class="panel-body">
+                      <form id="fileUrlForm" action="FileUrlServlet" method="post">
+              					<label>Path: <label>
+                        <input type="text" name="filePath">
+                        <input type="submit" value=Submit class="btn btn-info">
+              				</form>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel Header</div>
-                    <div class="panel-body">Panel Content</div>
+                  <div class="panel panel-info">
+                    <div class="panel-heading">File Resource Stream</div>
+                    <div class="panel-body">
+                      <form id="fileResourceStreamForm" action="FileResourceStreamServlet"
+              					method="post">
+              					<label>Path: <label><input type="text" name="filePath"> <input
+              						type="submit" value=Submit class="btn btn-info">
+              				</form>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel Header</div>
-                    <div class="panel-body">Panel Content</div>
+                  <div class="panel panel-info">
+                    <div class="panel-heading">File Exec</div>
+                    <div class="panel-body">
+                      <form id="fileExec" action="FileExecServlet"
+              					method="post">
+              					<label>Path: <label><input type="text" name="cmd"> <input
+              						type="submit" value=Submit class="btn btn-info">
+              				</form>
+                    </div>
                   </div>
                 </div>
               </div>

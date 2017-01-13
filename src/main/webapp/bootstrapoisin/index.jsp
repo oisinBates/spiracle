@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Spiracle</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,13 +38,30 @@
             <div class="container">
                 <div class="row">
                   <div class="container">
-                    <div class="jumbotron">
-                      <h1>Welcome to Spiracle</h1>
-                      <p>Spiracle is an insecure web application used to test system security controls.</p>
+                    <div class="jumbotron" style="background-color: #9d2235">
+
+                      <div class="row">
+                        <div class="container">
+                          <div class="col-md-9" style="color: #ffffff;">
+                            <h1>Welcome to Spiracle</h1>
+                            <h2>Spiracle is an insecure web application used to test system security controls.</h2>
+                            <br>
+                            <h4>It can be used to read/write arbitrary files and open network connections.</h4>
+                            <h4>This application is also vulnerable to SQL Injection.</h4>
+                            <h4>Due to its insecure design, it should NOT be deployed on an unsecured network.</h4>
+                          </div>
+                          <div class="col-md-3">
+                            <img src="images/White-Symbol.png" alt="Waratek logo">
+                          </div>
+                          <%-- <div class="col-md-1">
+
+                          </div> --%>
+                        </div>
+                      </div>
+                      <%-- <h1 style="color: #ffffff;">Welcome to Spiracle</h1>
+                      <p>Spiracle is an insecure web application used to test system security controls.</p> --%>
                     </div>
-                    <p>It can be used to read/write arbitrary files and open network connections.</p>
-                    <p>>The application is also vulnerable to SQL Injection.</p>
-                    <p>Due to its insecure design, this application should NOT be deployed on an unsecured network.</p>
+
                   </div>
                     <%-- <div class="col-lg-8 col-lg-offset-2">
                       <h1>Welcome to Spiracle</h1>

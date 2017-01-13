@@ -1,8 +1,48 @@
 .footer {
   position: absolute;
   bottom: 0;
+}
 
-  
+/*over-riding bootstrap standard formatting for 'pre' tags*/
+/* http://stackoverflow.com/questions/35896313/how-i-can-remove-bootstrap-styling-on-pre-element */
+.pre{
+    display: block;
+    font-family: monospace;
+    padding: 0px;
+    margin: 0 0 0px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: transparent;
+    border: 0px ;
+    border-radius: 0px;
+}
+
+
+.form-padding-btm{
+  padding-bottom: 8px;
+}
+
+
+.textarea-resize{
+  width: 100%;
+  height: 20em;
+}
+
+
+/*not currently using the below style -- might delete this block later*/
+/*for rezizing the text area in file.jsp*/
+/*taken from  http://stackoverflow.com/questions/271067/how-can-i-make-a-textarea-100-width-without-overflowing-when-padding-is-present*/
+/*.boxsizingBorder {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}*/
+
+
+
   /*width: 100%;*/
   /* Set the fixed height of the footer here */
   /*height: 50px;*/
@@ -10,4 +50,3 @@
   /*padding-top: 10px;*/
   /*text-align: center;*/
   /*color: #ffffff;*/
-}
