@@ -64,7 +64,7 @@
 <%-- panels  --%>
                   <div class="row">
                     <div class="container">
-                      <div class="col-md-12">
+                      <%-- <div class="col-md-12"> --%>
 
                       <div class="panel-group">
                         <h3>Here's an example of a collapsible panel</h3>
@@ -128,7 +128,7 @@
                           </div>
                         </div>
 
-                      </div>
+                      <%-- </div> --%>
                     </div>
                   </div>
 

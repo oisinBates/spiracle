@@ -39,7 +39,7 @@
             <div class="row">
               <div class="container">
                   <div class="page-header">
-                    <h1>Cross-Site Scripting(XSS)</h1>
+                    <h1>Cross-site Scripting(XSS)</h1>
                   </div>
                   <p>Blurb about these tests</p>
               </div>

@@ -36,13 +36,15 @@
 				        <span class="hamb-bottom"></span>
             </button>
 
+          <div class="container">
+
             <div class="row">
-              <div class="container">
+              <%-- <div class="container"> --%>
                   <div class="page-header">
                     <h1>Miscellanious</h1>
                   </div>
                   <p>Blurb about these tests</p>
-              </div>
+              <%-- </div> --%>
             </div>
 
             <%
@@ -53,71 +55,73 @@
             %>
 
             <div class="row">
-              <div class="container">
-                <div class="col-md-6">
-                  <div class="panel panel-info">
-                    <div class="panel-heading">HttpServletRequest Method Return</div>
-                    <div class="panel-body">
-                      <form action="HttpRequestMethod" method="post" class="form-inline">
-                          <select name="method" class="form-control">
-                              <option value="getHeader">getHeader()</option>
-                              <option value="getHeaders">getHeaders()</option>
-                              <option value="getMethod">getMethod()</option>
-                              <option value="getPathInfo">getPathInfo()</option>
-                              <option value="getPathTranslated">getPathTranslated()</option>
-                              <option value="getQueryString">getQueryString()</option>
-                              <option value="getRequestURI">getRequestURI()</option>
-                              <option value="getRequestURL">getRequestURL()</option>
-                              <option value="getServletPath">getServletPath()</option>
-                              <option value="getComment">getComment()</option>
-                              <option value="getName">getName()</option>
-                              <option value="getDomain">getDomain()</option>
-                              <option value="getPath">getPath()</option>
-                              <option value="getValue">getValue()</option>
-                          </select>
-
-                          <div class="form-group">
-                            <input type="text" name="arg">
-                          </div>
-
-                        <input type="submit" class="btn btn-info">
-                      </form>
-
-                      <br>
-
-                      <div class="alert alert-success">
-                        <strong>Return Value: </strong> <%=methodReturn%>
-                      </div>
-
-                    </div>
+              <div class="col-md-6">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    HttpServletRequest Method Return
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="panel panel-danger">
-                    <div class="panel-heading">Crash JVM</div>
-                    <div class="panel-body">
-                      <form action="CrashJvm" method="post" class="text-center">
-                          <input type="submit" class="btn btn-danger btn-lg active" title="This will crash your JVM" value="Danger!">
-                      </form><br>
-
-                      <div class="alert alert-warning">
-                        <strong>Warning!</strong> Use sun.misc.It is unsafe to directly address internal JVM address space and hard crash the JVM.
+                  <div class="box">
+                  <div class="panel-body">
+                    <form action="HttpRequestMethod" method="post" class="form-inline">
+                      <select name="method" class="form-control">
+                        <option value="getHeader">getHeader()</option>
+                        <option value="getHeaders">getHeaders()</option>
+                        <option value="getMethod">getMethod()</option>
+                        <option value="getPathInfo">getPathInfo()</option>
+                        <option value="getPathTranslated">getPathTranslated()</option>
+                        <option value="getQueryString">getQueryString()</option>
+                        <option value="getRequestURI">getRequestURI()</option>
+                        <option value="getRequestURL">getRequestURL()</option>
+                        <option value="getServletPath">getServletPath()</option>
+                        <option value="getComment">getComment()</option>
+                        <option value="getName">getName()</option>
+                        <option value="getDomain">getDomain()</option>
+                        <option value="getPath">getPath()</option>
+                        <option value="getValue">getValue()</option>
+                      </select>
+                      <div class="form-group">
+                        <input type="text" name="arg">
                       </div>
-
+                      <input type="submit" class="btn btn-info">
+                    </form>
+                    <br>
+                    <div class="alert alert-success">
+                      <strong>Return Value: </strong> <%=methodReturn%>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+                <div class="col-md-6">
+                  <div class="panel panel-danger">
+                    <div class="panel-heading">
+                      Crash JVM
+                    </div>
+                    <div class="box">
+                      <div class="panel-body">
+                        <form action="CrashJvm" method="post" class="text-center">
+                            <input type="submit" class="btn btn-danger btn-lg active" title="This will crash your JVM" value="Danger!">
+                        </form>
+                        <br>
+                        <div class="alert alert-warning">
+                          <strong>Warning!</strong> Use sun.misc.It is unsafe to directly address internal JVM address space and hard crash the JVM.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <%-- </div> --%>
+            </div>
 
             <div class="row">
-              <div class="container">
+              <%-- <div class="container"> --%>
                 <div class="col-md-6">
                   <div class="panel panel-danger">
                     <div class="panel-heading">Thread Terminate</div>
-                    <div class="panel-body">
+                      <div class="box">
+                        <div class="panel-body">
 
-<%-- ############################################# need to compil to test this code --%>
+<%-- ############################################# need to compile to test this code --%>
 
                       <%-- <%
                         Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
@@ -136,8 +140,9 @@
                       </form>
  --%>
 
-                      <div class="alert alert-warning">
-                        <strong>Warning!</strong> May cause application server to become unresponsive or crash JVM.
+                        <div class="alert alert-warning">
+                          <strong>Warning!</strong> May cause application server to become unresponsive or crash JVM.
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -145,49 +150,58 @@
                 <div class="col-md-6">
                   <div class="panel panel-info">
                     <div class="panel-heading">Thread Stack Inspector</div>
-                    <div class="panel-body">
-
-                      <form action="GetThreadStack" method="post" class="form-inline">
-                          <select name="threadName" class="form-control">
-                              <c:forEach var="thread" items="${threadList}">
-                                  <option value="${thread.name}">${thread.name}</option>
-                              </c:forEach>
-                          </select>
-                          <input type="submit" value="Submit" class="btn btn-info">
-                      </form>
-                      <br>
-                      <%
-                          String threadName = (String) session.getAttribute("threadName");
-                          if (threadName == null) {
-                              threadName = "";
-                          }
-                      %>
-                      <c:if test="${not empty threadName}">
-                          <label>Selected Thread: <%=threadName%></label>
-                          <select multiple size="10" class="form-control">
-                              <c:forEach var="stackElement" items="${stackTrace}">
-                                  <option value="${stackElement}">${stackElement}</option>
-                              </c:forEach>
-                          </select>
-                      </c:if>
-
+                      <div class="box">
+                        <div class="panel-body">
+                          <form action="GetThreadStack" method="post" class="form-inline">
+                            <select name="threadName" class="form-control">
+                                <c:forEach var="thread" items="${threadList}">
+                                    <option value="${thread.name}">${thread.name}</option>
+                                </c:forEach>
+                            </select>
+                            <input type="submit" value="Submit" class="btn btn-info">
+                          </form>
+                          <br>
+                          <%
+                              String threadName = (String) session.getAttribute("threadName");
+                              if (threadName == null) {
+                                  threadName = "";
+                              }
+                          %>
+                          <c:if test="${not empty threadName}">
+                            <label>Selected Thread: <%=threadName%></label>
+                            <select multiple size="10" class="form-control">
+                                <c:forEach var="stackElement" items="${stackTrace}">
+                                    <option value="${stackElement}">${stackElement}</option>
+                                </c:forEach>
+                            </select>
+                          </c:if>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
 
           </div>
+      <%--container end  --%>
+      </div>
         </div>
         <!-- /#page-content-wrapper -->
     </div>
     <!-- /#wrapper -->
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --%>
+    <script src="js/jquery.min.js"></script>  
+    <script src="js/jquery.matchHeight.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sidebar.js"></script>
+
+
+    <script>
+    $( document ).ready(function() {
+      $('.box').matchHeight();
+    });
+    </script>
   </body>
 </html>

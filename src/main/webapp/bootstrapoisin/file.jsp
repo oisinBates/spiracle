@@ -57,26 +57,31 @@
               				}
               			%>
                     <div class="panel-heading">File</div>
-                    <div class="panel-body">
-                      <form id="fileForm" action="FileServlet" method="post">
-              					<label>Path: <label> <input type="text" name="filePath"><br>
-                        <label>Read <input type="radio" name="fileArg" value="read" checked></label>
-              					<label>Write <input type="radio" name="fileArg" value="write"></label>
-              					<label>Delete <input type="radio" name="fileArg" value="delete"></label>
-              					<input type="submit" value=Submit class="btn btn-info">
-              				</form>
-                    </div>
+                      <div class="box">
+                        <div class="panel-body">
+                          <form id="fileForm" action="FileServlet" method="post">
+                  					<label>Path: <label> <input type="text" name="filePath"><br>
+                            <label>Read <input type="radio" name="fileArg" value="read" checked></label>
+                  					<label>Write <input type="radio" name="fileArg" value="write"></label>
+                  					<label>Delete <input type="radio" name="fileArg" value="delete"></label>
+                  					<input type="submit" value=Submit class="btn btn-info">
+                  				</form>
+                        </div>
+                      </div>
                   </div>
+
                 </div>
                 <div class="col-md-9">
                   <div class="panel panel-info">
                     <div class="panel-heading">Text Data</div>
-                    <div class="panel-body">
-                      <pre class="pre">
-              					<textarea form="fileForm" name="fileText"
-              						style="  width: 60em; height: 20em;"><%=textData%></textarea>
-              				</pre>
-                    </div>
+                      <div class="box">
+                        <div class="panel-body">
+                          <pre class="pre">
+                  					<textarea form="fileForm" name="fileText"
+                  						style="  width: 60em; height: 20em;"><%=textData%></textarea>
+                  				</pre>
+                        </div>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -129,11 +134,16 @@
     </div>
     <!-- /#wrapper -->
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --%>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.matchHeight.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sidebar.js"></script>
+
+    <script>
+    $( document ).ready(function() {
+      $('.box').matchHeight();
+    });
+    </script>
   </body>
 </html>

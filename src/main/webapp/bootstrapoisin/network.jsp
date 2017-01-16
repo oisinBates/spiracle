@@ -50,70 +50,76 @@
               <div class="container">
                 <div class="col-md-6">
                   <div class="panel panel-info">
-                    <div class="panel-heading">Socket</div>
-                    <div class="panel-body">
-                      <%
-                        String socketInfo = (String) session.getAttribute("socketInfo");
-                        if (socketInfo == null) {
-                          socketInfo = "";
-                        }
-                      %>
-                      <form action="SocketServlet" method="post">
-                        <p>
-                          <i>Local Binding Address</i>
-                        </p>
+                    <div class="panel-heading">
+                      Socket
+                    </div>
+                    <div class="box">
+                      <div class="panel-body">
+                        <%
+                          String socketInfo = (String) session.getAttribute("socketInfo");
+                          if (socketInfo == null) {
+                            socketInfo = "";
+                          }
+                        %>
+                        <form action="SocketServlet" method="post">
+                          <p>
+                            <i>Local Binding Address</i>
+                          </p>
 
-                        <label>Hostname: </label><input type="text" name="bindHost">
-                        <label>Port: </label><input type="text" name="bindPort">
+                          <label>Hostname: </label><input type="text" name="bindHost">
+                          <label>Port: </label><input type="text" name="bindPort">
 
-                        <p style="margin-top: 12px;">
-                          <i>Remote Address</i>
-                        </p>
-                        <label>Hostname: </label><input type="text" name="remoteHost">
-                        <label>Port: </label><input type="text" name="remotePort">
+                          <p style="margin-top: 12px;">
+                            <i>Remote Address</i>
+                          </p>
+                          <label>Hostname: </label><input type="text" name="remoteHost">
+                          <label>Port: </label><input type="text" name="remotePort">
+
+                          <br>
+                          <input type="submit" value=Submit class="btn btn-info" style="margin-top: 12px;">
+                        </form>
 
                         <br>
-                        <input type="submit" value=Submit class="btn btn-info" style="margin-top: 12px;">
-                      </form>
-
-                      <br>
-                      <div class="alert alert-success">
-                        <strong>Connection Info: </strong> <%=socketInfo%>
+                        <div class="alert alert-success">
+                          <strong>Connection Info: </strong> <%=socketInfo%>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="panel panel-info">
-                    <div class="panel-heading">Server Socket</div>
-                    <div class="panel-body">
+                    <div class="panel-heading">
+                      Server Socket
+                    </div>
+                    <div class="box">
+                      <div class="panel-body">
+                        <%
+                          String serverSocketInfo = (String) session
+                              .getAttribute("serverSocketInfo");
+                          if (serverSocketInfo == null) {
+                            serverSocketInfo = "";
+                          }
+                        %>
+                        <p>
+                          <i>
+                            Server Socket
+                          </i>
+                        </p>
+                        <form action="ServerSocketServlet" method="post">
+                          <label>Hostname: </label><input type="text" name="hostname">
+                          <label>Port: </label><input type="text" name="port"> <input type="submit" value=Submit class="btn btn-info" style="margin-top: 12px;">
+                        </form>
 
-                      <%
-                        String serverSocketInfo = (String) session
-                            .getAttribute("serverSocketInfo");
-                        if (serverSocketInfo == null) {
-                          serverSocketInfo = "";
-                        }
-                      %>
-                      <p>
-                        <i>
-                          Server Socket
-                        </i>
-                      </p>
-                      <form action="ServerSocketServlet" method="post">
-                        <label>Hostname: </label><input type="text" name="hostname">
-                        <label>Port: </label><input type="text" name="port"> <input type="submit" value=Submit class="btn btn-info" style="margin-top: 12px;">
-                      </form>
-
-                      <br>
-                      <div class="alert alert-success">
-                        <strong>Connection Info: </strong> <%=serverSocketInfo%>
+                        <br>
+                        <div class="alert alert-success">
+                          <strong>Connection Info: </strong> <%=serverSocketInfo%>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
             <div class="row">
               <div class="container">
@@ -150,10 +156,17 @@
     <!-- /#wrapper -->
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --%>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.matchHeight.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sidebar.js"></script>
+
+    <script>
+    $( document ).ready(function() {
+      $('.box').matchHeight();
+    });
+    </script>
   </body>
 </html>
