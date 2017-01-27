@@ -359,32 +359,32 @@
               </div>
             </div>
 
-          </div>
-        </div>
+            <div class="row">
+              <div class="container">
+                <div class="col-md-12">
+                  <div class="panel panel-info">
+              			<div class="panel-heading">
+                      iframe tags
+                    </div>
+              			<div class="panel-body">
 
-        <div class="row">
-          <div class="container">
-            <div class="panel panel-info">
-        			<div class="panel-heading">
-                iframe tags
+              		  		<iframe src="index.jsp"></iframe>
+              		  		<iframe src='index.jsp'></iframe>
+              		  		<iframe src=index.jsp></iframe>
+              		  		<iframe src = "index.jsp"></iframe>
+              		  		<IFRAME src="index.jsp"></iframe>
+              		  		<iframe src="http://www.google.com"></iframe>
+              		  		<iframe src='http://www.google.com'></iframe>
+              		  		<iframe src=http://www.google.com></iframe>
+              		  		<iframe src = "http://www.google.com"></iframe>
+              		  		<IFRAME src="http://www.google.com"></iframe>
+              		  	</div>
+              		</div>
+                </div>
               </div>
-        			<div class="panel-body">
-        		  		<iframe src="index.jsp"></iframe>
-        		  		<iframe src='index.jsp'></iframe>
-        		  		<iframe src=index.jsp></iframe>
-        		  		<iframe src = "index.jsp"></iframe>
-        		  		<IFRAME src="index.jsp"></iframe>
-        		  		<iframe src="http://www.google.com"></iframe>
-        		  		<iframe src='http://www.google.com'></iframe>
-        		  		<iframe src=http://www.google.com></iframe>
-        		  		<iframe src = "http://www.google.com"></iframe>
-        		  		<IFRAME src="http://www.google.com"></iframe>
-        		  	</div>
-        		</div>
+            </div>
+
           </div>
-        </div>
-
-
         <!-- /#page-content-wrapper -->
     </div>
     <!-- /#wrapper -->
