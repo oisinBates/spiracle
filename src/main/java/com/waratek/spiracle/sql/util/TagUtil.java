@@ -28,8 +28,9 @@ public class TagUtil {
 		out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.min.css\">");
 		out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap-theme.min.css\">");
 		out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">");
+		out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/onepagedemo.css\">");
 
-		out.println("<title>Spiracle - SQL</title>");
+		out.println("<title>Waratek Demo</title>");
 		out.println("</head>");
 		out.println("<body>");
 	}
@@ -65,6 +66,7 @@ public class TagUtil {
 	}
 
 	static void printPageFooter(ServletOutputStream out) throws IOException {
+		out.println("</div>");
 		out.println("</div>");
 		out.println("</div>");
 		out.println("<script src=\"js/jquery.min.js\"></script>");

@@ -45,7 +45,7 @@ public class SelectUtil {
 		ResultSet rs = null;
 
 		TagUtil.printPageHead(out);
-		TagUtil.printPageNavbar(out);
+		// TagUtil.printPageNavbar(out);
 		TagUtil.printContentDiv(out);
 
 		try {
@@ -56,8 +56,13 @@ public class SelectUtil {
 				connectionType = request.getParameter("connectionType");
 			}
 			con = ConnectionUtil.getConnection(application, connectionType);
+			out.println("<div class=\"panel panel-success\" style=\"margin-top: 360px;\">");
+			// out.println("<div class=\"panel-heading\"> <pre style=\"background: none; border: none; margin: 0px; color:green;\" class=\"h5\">SQL results for:   ");
+			// out.println(sql);
+			// out.println("</pre></div>");
+
 			out.println("<div class=\"panel-body\">");
-			out.println("<h1>SQL Query:</h1>");
+			out.println("<h2>SQL Query:</h2>");
 			out.println("<pre>");
 			out.println(sql);
 			out.println("</pre>");
@@ -136,7 +141,7 @@ public class SelectUtil {
 	private static void writeToResponse(Boolean allResults, Boolean showOutput, ServletOutputStream out, ResultSet rs) throws SQLException, IOException {
 		ResultSetMetaData metaData = rs.getMetaData();
 
-		out.println("<h1>Results:</h1>");
+		out.println("<h2>Results:</h2>");
 		out.println("<TABLE CLASS=\"table table-bordered table-striped\">");
 		out.println("<TR>");
 		for(int i = 1; i <= metaData.getColumnCount(); i++) {

@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  background: url('../waratekstockimage.png');
+  min-height : 100%;
+  min-width : 100%;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+}
